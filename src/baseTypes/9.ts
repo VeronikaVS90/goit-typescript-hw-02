@@ -2,11 +2,13 @@
   Створіть новий тип даних, який підходить для цих двох об'єктів.
 */
 
+type PageStatus = 'start' | 'pending' | 'finished' | 'idle';
+
 type Page = {
   title: string;
   likes: number;
   accounts: string[];
-  status: string;
+  status: PageStatus;
   details?: {
     createAt: Date;
     updateAt: Date;
@@ -17,7 +19,7 @@ const page1: Page = {
   title: 'The awesome page',
   likes: 100,
   accounts: ['Max', 'Anton', 'Nikita'],
-  status: 'open',
+  status: 'start',
   details: {
     createAt: new Date('2021-01-01'),
     updateAt: new Date('2021-05-01'),
@@ -28,7 +30,7 @@ const page2: Page = {
   title: 'Python or Js',
   likes: 5,
   accounts: ['Alex'],
-  status: 'close',
+  status: 'finished',
 };
 
 export { page1, page2 };
